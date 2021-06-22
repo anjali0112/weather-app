@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "build": "if [ $BUILD_ASSETS ]; then npm run build-assets; fi",
+  "build-assets": "bower install && grunt build",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+     "build": "bower install && grunt build",
+     "start": "node app.js"
   },
   "author": "Anjali",
   "license": "ISC",
