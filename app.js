@@ -4,7 +4,6 @@ const path =require("path");
 const ejs=require("ejs");
 const bodyParser=require("body-parser");
 
-
 const app =express();
 const viewsPath = path.join(__dirname,'templates/views');
 app.use(bodyParser.urlencoded({extended :true}));
