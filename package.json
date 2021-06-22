@@ -15,5 +15,9 @@
     "hbs": "^4.1.2",
     "path": "^0.12.7",
     "web-midi-api": "^2.1.1"
-  }
+  },
+  "scripts": {
+  "build": "bower install && grunt build",
+  "start": "nf start"
+}
 }
