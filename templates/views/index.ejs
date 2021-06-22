@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>⛅ Weather App</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!--  FONT AWESOME -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+		<!-- GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+		<!--  CSS -->
+		<link rel="stylesheet" href="css/styles.css"/>
+
+	</head>
+	<body>
+		<div class="headr">
+		<h1 id="heading">Weather In Your City</h1>
+	</div>
+		<!-- Search Bar -->
+		<%var weekDays=["Sunday","Monday","Tuesday","Wednesday","thursday","Friday","Saturday"];%>
+		<%var weekDayShort=["Sun","Mon","Tue","Wed","thu","Fri","Sat"];%>
+		-->		<!-- Content -->
+		<div class="content  d-flex flex-md-row flex-sm-column">
+			
+			<!-- Current -->
+			<div class="current-weather d-flex justify-content-center flex-column">
+				<i class="mb-2 align-self-center fas fa-map-marker-alt"></i>
+				<div class="place align-self-center">
+					<h1> <%=place%></h1>
+				</div>
+				<div class="temperature d-flex flex-row align-self-center align-items-center">
+					<img src= <%=today_icon%> ></img>
+					<h2> <%=Data.current.temp%><sup>°</sup>C</h2>
+				</div>
+				<div class="description align-self-center">
+					<h3>
+					<%=Data.current.weather[0].description%>
+					
+					</h3>
+				</div>
+				<%
+				var time=Data.current.dt;
+				var date=new Date(time*1000);
+				var options ={
+				day:"numeric",
+				month:"short"
+				};
+				var day=date.toLocaleDateString("en-US",options);
+				var time=date.getHours()+":"+date.getMinutes()%>
+				<div class="current-time">
+					<h2><%=time%></h2>
+					<h4 class='d-inline pr-2'>
+					<%=day%></h4>
+					<h4 class='d-inline pr-2'>
+					<%=weekDays[date.getDay()]%></h4>
+				</div>
+			</div>
+			<!-- Daily -->
+			<div class="daily d-flex justify-content-between flex-lg-row flex-sm-column
+				">
+				<%for(let i=0;i<7;i++){ %>
+				<%
+				var time=Data.daily[i].dt;
+				var date=new Date(time*1000);
+				var options ={
+				day:"numeric",
+				month:"numeric"};
+				var icon =Data.daily[i].weather[0].icon;
+				var iconUrl=" http://openweathermap.org/img/wn/"+icon+"@2x.png"
+				var day=date.toLocaleDateString("en-US",options);%>
+				<div class="daily-data daily-forecast-<%-i%> d-flex  align-items-center justify-content-between flex-lg-column flex-sm-row">
+					<h4 class="daily-date"><%= day%></h4>
+					<h4 class="daily-day"><%=weekDayShort[date.getDay()]%></h4>
+					<img class="daily-icon" src= <%=iconUrl%> ></img>
+					<h4 class="daily-max"><%=Data.daily[0].temp.max%></h4>
+					<h4 class="daily-min"><%=Data.daily[0].temp.min%></h4>
+				</div>
+				<%}%>
+			</div>
+		</div>
+		<script type="text/javascript" src="JS/index.js"></script>
+	</body>
+</html>
+<!--  -->

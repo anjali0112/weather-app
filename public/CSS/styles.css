@@ -1,0 +1,155 @@
+body
+{
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: capitalize;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #EAF6F6;
+    visibility: hidden;
+}
+
+ h1
+{
+	font-weight:900;
+	font-size: 3rem;
+
+}
+h2
+{
+	font-weight: 800;
+	font-size: 2.5rem;
+}
+h3
+{
+	font-weight: 500;
+	font-size: 2rem;
+}
+h4
+{
+	font-weight: 700;
+	font-size: 1.5rem;
+}
+.headr
+{
+	color: #06354E;
+	font-family: 'Cookie', cursive;
+	text-align: center;
+	margin-top: 1.5rem;
+}
+.content
+{
+	height: 70vh;
+	margin: 1rem 10rem 3rem 10rem;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.current-weather
+{
+	min-height: 500px;
+	flex:1;
+    background-color: #14ACFF;
+    position: relative;
+    border-top-left-radius: 15px;
+}
+.current-time
+{
+	position: absolute;
+	bottom: 2%;
+	left: 2%;
+}
+.fa-map-marker-alt
+{
+	font-size: 40px;
+}
+.daily
+{
+	flex: 1;
+}
+.daily-data
+{
+	box-shadow: inset -3px -3px 5px 0 #39A5DE;
+}
+.daily-forecast-0
+{
+	background-color:#129DE8;
+	flex: 1;
+}
+.daily-forecast-1
+{
+	background-color: #0F83C2;
+	flex: 1;
+}
+.daily-forecast-2
+{
+	background-color:#0C699B;
+	flex: 1;
+}
+.daily-forecast-3
+{
+	background-color:#094F75;
+	flex: 1;
+}
+
+.daily-forecast-4
+{
+	background-color:#06354E;
+	flex: 1;
+}
+.daily-forecast-5
+{
+	background-color:#031B28;
+	flex: 1;
+}
+.daily-forecast-6
+{
+	background-color:#000102;
+	flex: 1;
+	border-bottom-right-radius: 15px;
+}
+
+.daily-date,.daily-max
+{
+	margin-top: 5rem;
+}
+
+.daily-min,.daily-day
+{
+	margin-bottom:5rem;
+}
+ 
+.daily-icon
+{
+	width: 5rem;
+	height: 5rem;
+}
+
+
+@media (max-width:990px) {
+
+	.daily-date,.daily-max
+{
+	margin-top: 0;
+}
+
+.daily-min,.daily-day
+{
+	margin-bottom:0;
+}
+.daily-icon
+{
+	width: 3rem;
+	height: 3rem;
+}
+.content
+{
+	margin-right: 5rem;
+	margin-left: 5rem;
+}
+.daily-data
+{
+	padding: 1rem;
+}
+}
+ 
