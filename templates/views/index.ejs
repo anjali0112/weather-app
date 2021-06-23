@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
 		<!--  CSS -->
-		<link rel="stylesheet" href="css/styles.css"/>
+		<link rel="stylesheet" href="CSS/styles.css"/>
 
 	</head>
 	<body>
@@ -46,15 +46,15 @@
 				</div>
 				<%
 				var time=Data.current.dt;
-				var date=new Date(time*1000);
+				var date=new Date(time*1000+(Data.timezone_offset*1000));
 				var options ={
 				day:"numeric",
 				month:"short"
 				};
 				var day=date.toLocaleDateString("en-US",options);
-				var time=date.getHours()+":"+date.getMinutes()%>
+				var curr=date.getHours() +":" + date.getMinutes()%>
 				<div class="current-time">
-					<h2><%=time%></h2>
+					<h2><%=curr%></h2>
 					<h4 class='d-inline pr-2'>
 					<%=day%></h4>
 					<h4 class='d-inline pr-2'>
@@ -78,8 +78,8 @@
 					<h4 class="daily-date"><%= day%></h4>
 					<h4 class="daily-day"><%=weekDayShort[date.getDay()]%></h4>
 					<img class="daily-icon" src= <%=iconUrl%> ></img>
-					<h4 class="daily-max"><%=Data.daily[0].temp.max%></h4>
-					<h4 class="daily-min"><%=Data.daily[0].temp.min%></h4>
+					<h4 class="daily-max"><%=Data.daily[i].temp.max%></h4>
+					<h4 class="daily-min"><%=Data.daily[i].temp.min%></h4>
 				</div>
 				<%}%>
 			</div>
@@ -87,4 +87,3 @@
 		<script type="text/javascript" src="JS/index.js"></script>
 	</body>
 </html>
-<!--  -->

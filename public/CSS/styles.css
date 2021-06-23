@@ -47,8 +47,7 @@ h4
 
 .current-weather
 {
-	min-height: 500px;
-	flex:1;
+	  flex:1;
     background-color: #14ACFF;
     position: relative;
     border-top-left-radius: 15px;
@@ -69,6 +68,7 @@ h4
 }
 .daily-data
 {
+ 
 	box-shadow: inset -3px -3px 5px 0 #39A5DE;
 }
 .daily-forecast-0
@@ -109,12 +109,12 @@ h4
 	border-bottom-right-radius: 15px;
 }
 
-.daily-date,.daily-max
+.daily-date
 {
 	margin-top: 5rem;
 }
 
-.daily-min,.daily-day
+.daily-min
 {
 	margin-bottom:5rem;
 }
@@ -144,12 +144,29 @@ h4
 }
 .content
 {
-	margin-right: 5rem;
-	margin-left: 5rem;
+	margin-right: 6rem;
+	margin-left: 6rem;
 }
 .daily-data
-{
-	padding: 1rem;
-}
+  {
+     padding-right:1rem;
+     padding-left:1rem;
+  }
 }
  
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .content,.daily
+  {
+    flex-direction:column;
+  }
+  .content
+  {
+    margin:0 2rem 2rem 2rem;
+  }
+  .current-weather
+  {
+    padding-top:100px;
+    padding-bottom:100px;
+  }
+}
