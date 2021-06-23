@@ -4,7 +4,7 @@ This web application provides real-time weather information for your location. T
 You can check out the web app [here](https://immense-eyrie-01253.herokuapp.com/)
 
 
-##REQUIREMENTS:
+## REQUIREMENTS:
 
 You need to have [NodeJS](https://nodejs.org/en/) installed in your machine.
 
