@@ -71,7 +71,7 @@
 				var options ={
 				day:"numeric",
 				month:"numeric"};
-				var icon =Data.daily[i].weather[0].icon;
+				var icon =Data.daily[i].weather[i].icon;
 				var iconUrl=" http://openweathermap.org/img/wn/"+icon+"@2x.png"
 				var day=date.toLocaleDateString("en-US",options);%>
 				<div class="daily-data daily-forecast-<%-i%> d-flex  align-items-center justify-content-between flex-lg-column flex-sm-row">
